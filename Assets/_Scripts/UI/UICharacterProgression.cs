@@ -18,6 +18,7 @@ public class UICharacterProgression : MonoBehaviour
     public void UpdateExperienceSliderMaxValue(int value)
     {
         m_experienceMeter.maxValue = value;
+        UpdateExperienceText();
     }
 
     private void UpdateExperienceText()

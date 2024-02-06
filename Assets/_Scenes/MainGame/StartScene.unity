@@ -1978,14 +1978,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2027561815, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
-      propertyPath: m_startExperienceToLevelUp
-      value: 145
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027561815, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
-      propertyPath: m_experienceIncreaseMultiplier
-      value: 1.23
-      objectReference: {fileID: 0}
     - target: {fileID: 7016670114381001882, guid: 42157078d1e4fed43a26b082f9208954,
         type: 3}
       propertyPath: m_RootOrder
