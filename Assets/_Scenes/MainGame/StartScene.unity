@@ -1978,6 +1978,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2027561815, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: m_startExperienceToLevelUp
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027561815, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: m_experienceIncreaseMultiplier
+      value: 1.23
+      objectReference: {fileID: 0}
     - target: {fileID: 7016670114381001882, guid: 42157078d1e4fed43a26b082f9208954,
         type: 3}
       propertyPath: m_RootOrder
@@ -14285,6 +14293,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5472777191241217493, guid: 73bd727f22e99e04b98207ba3db002cf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6396586867398324431, guid: 73bd727f22e99e04b98207ba3db002cf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -14439,6 +14452,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337705025773947342, guid: 73bd727f22e99e04b98207ba3db002cf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752802265361065489, guid: 73bd727f22e99e04b98207ba3db002cf,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73bd727f22e99e04b98207ba3db002cf, type: 3}

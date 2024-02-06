@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 489634239324406992}
   - component: {fileID: 6234591343165960796}
   - component: {fileID: 7650464473328070188}
+  - component: {fileID: 2027561815}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -285,11 +286,32 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 93040657-1b04-4af5-991a-7ca9a6597fdb
     m_ActionName: Player/Aim[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 93040657-1b04-4af5-991a-7ca9a6597fdb
+    m_ActionName: DebugButton
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2027561815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650464473328070176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44540ae7b27b59545913eb952996da30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_experienceIncreaseMultiplier: 1.23
+  m_startExperienceToLevelUp: 145
+  m_hasLeveledUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8518902573396185253
 GameObject:
   m_ObjectHideFlags: 0
