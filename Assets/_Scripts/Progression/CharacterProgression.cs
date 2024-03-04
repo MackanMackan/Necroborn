@@ -41,6 +41,7 @@ public class CharacterProgression : MonoBehaviour
 
     public void OnDebugButton(InputValue value)
     {
-        GainExperience(Mathf.FloorToInt(Random.Range(10, 20)));
+        UIManager.Instance.GetUIHealthAndManaManager().Heal(10);
+        UIManager.Instance.GetUIHealthAndManaManager().GainMana(10);
     }
 }

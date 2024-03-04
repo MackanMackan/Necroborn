@@ -7,7 +7,7 @@ public class UICharacterProgression : MonoBehaviour
     [SerializeField] private Slider m_experienceMeter;
     [SerializeField] private TMP_Text m_experienceText;
 
-    private string m_divider = " / ";
+    private const string k_divider = " / ";
 
     public void UpdateExperienceSliderValue(int value)
     {
@@ -23,6 +23,6 @@ public class UICharacterProgression : MonoBehaviour
 
     private void UpdateExperienceText()
     {
-        m_experienceText.text = m_experienceMeter.value + m_divider + m_experienceMeter.maxValue;
+        m_experienceText.text = m_experienceMeter.value + k_divider + m_experienceMeter.maxValue;
     }
 }
