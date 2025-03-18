@@ -9,11 +9,12 @@ namespace _Scripts.Summon
         private NavMeshAgent m_agent;
         private AIAnimationController m_animationController;
         
-        public void Initialize(Transform target, NavMeshAgent agent, AIAnimationController animationController)
+        public void Initialize(Transform target, NavMeshAgent agent, AIAnimationController animationController, Transform self)
         {
             m_target = target;
             m_agent = agent;
             m_animationController = animationController;
+            Debug.Log($"{self} is following {target}");
         }
 
         public void Execute()

@@ -5,7 +5,7 @@ namespace _Scripts.Summon
 {
     public class ProtectAreaCommand : ICommand
     {
-        public void Initialize(Transform target, NavMeshAgent agent, AIAnimationController animationController)
+        public void Initialize(Transform target, NavMeshAgent agent, AIAnimationController animationController, Transform self)
         {
             throw new System.NotImplementedException();
         }

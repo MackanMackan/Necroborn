@@ -18,7 +18,7 @@ namespace _Scripts.Summon
             PlayerAccessibles.Instance.GiveCommands.DoCommand.AddListener(SetNewCommand);
             
             m_activeCommand = new FollowCommand();
-            m_activeCommand.Initialize(m_target, m_aiAgent, m_animController);
+            m_activeCommand.Initialize(m_target, m_aiAgent, m_animController, transform);
         }
 
         void Update()
@@ -28,11 +28,20 @@ namespace _Scripts.Summon
             m_activeCommand.Execute();
         }
 
-        private void SetNewCommand(ICommand command)
+        private void SetNewCommand((ICommand,  GameObject) command)
         {
+            Debug.Log($"{transform} got command {command}");
             m_activeCommand.Uninitialize();
-            m_activeCommand = command;
-            m_activeCommand.Initialize(m_target, m_aiAgent, m_animController);
+            m_activeCommand = CommandLookUp(command.Item1);
+            m_activeCommand.Initialize(command.Item2.transform, m_aiAgent, m_animController, transform);
         }
+
+        private ICommand CommandLookUp(ICommand command) => command switch
+        {
+            AttackCommand => new AttackCommand(),
+            FollowCommand => new FollowCommand(),
+            ProtectAreaCommand => new ProtectAreaCommand(),
+            _ => new FollowCommand()
+        };
     }
 }

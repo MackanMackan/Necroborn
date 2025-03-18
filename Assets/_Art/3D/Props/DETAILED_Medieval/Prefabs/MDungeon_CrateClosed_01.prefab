@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4287520422725958096}
   - component: {fileID: 4287520422727285238}
   - component: {fileID: 4287520422728383286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 84
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4287520422725958096
 Transform:
@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0.0021666295, y: -0.0026786015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4287520422725958100}
   m_RootOrder: 1
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -92,12 +94,12 @@ GameObject:
   - component: {fileID: 4287520422725958098}
   - component: {fileID: 4287520422727285232}
   - component: {fileID: 4287520422728383280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 84
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4287520422725958098
 Transform:
@@ -109,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0.001137913, y: -0.0026786015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4287520422725958100}
   m_RootOrder: 2
@@ -132,6 +135,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -172,12 +176,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4287520422725958100}
   - component: {fileID: 4287520422711192948}
-  m_Layer: 0
+  - component: {fileID: 316281802}
+  - component: {fileID: 3143467318868693705}
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 84
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4287520422725958100
 Transform:
@@ -189,6 +195,7 @@ Transform:
   m_LocalRotation: {x: 0.6830128, y: 0.18301253, z: 0.18301253, w: -0.6830128}
   m_LocalPosition: {x: 1.6950002, y: -1.8549871, z: -3.6369994}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4287520422725958102}
   - {fileID: 4287520422725958096}
@@ -229,6 +236,35 @@ LODGroup:
     - renderer: {fileID: 4287520422728383280}
     - renderer: {fileID: 3876397286537413440}
   m_Enabled: 1
+--- !u!114 &316281802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287520422726444532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea9c4f40ad02594b8250fc88973f74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+--- !u!54 &3143467318868693705
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287520422726444532}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4287520422726444534
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,12 +276,12 @@ GameObject:
   - component: {fileID: 4287520422725958102}
   - component: {fileID: 4287520422727285236}
   - component: {fileID: 4287520422728383284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 84
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4287520422725958102
 Transform:
@@ -257,6 +293,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0.0021666295, y: 0.0014138533, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4287520422725958100}
   m_RootOrder: 0
@@ -280,6 +317,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -321,12 +359,12 @@ GameObject:
   - component: {fileID: 1361204625558902524}
   - component: {fileID: 6268561497220639619}
   - component: {fileID: 3876397286537413440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_Lid_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 84
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1361204625558902524
 Transform:
@@ -338,6 +376,7 @@ Transform:
   m_LocalRotation: {x: 0.70067084, y: 0, z: -0, w: 0.7134847}
   m_LocalPosition: {x: -0.020914823, y: 0.012420654, z: 1.0212411}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4287520422725958100}
   m_RootOrder: 4
@@ -361,6 +400,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -401,12 +441,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2352092423608221053}
   - component: {fileID: 77396432403525218}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_01_Collision_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 92
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2352092423608221053
 Transform:
@@ -418,6 +458,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.505}
   m_LocalScale: {x: 1.04, y: 1.04, z: 1.072344}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1020289102263945329}
   m_RootOrder: 0
@@ -446,12 +487,12 @@ GameObject:
   - component: {fileID: 566803119385279632}
   - component: {fileID: 3701681863337535463}
   - component: {fileID: 1839170066777186209}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_Lid_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 84
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &566803119385279632
 Transform:
@@ -463,6 +504,7 @@ Transform:
   m_LocalRotation: {x: 0.70067084, y: 0, z: -0, w: 0.7134847}
   m_LocalPosition: {x: -0.02116704, y: 0.012420654, z: 1.0212411}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4287520422725958100}
   m_RootOrder: 3
@@ -486,6 +528,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -525,12 +568,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1020289102263945329}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MDungeon_CrateClosed_01_Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 92
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1020289102263945329
 Transform:
@@ -542,6 +585,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2352092423608221053}
   m_Father: {fileID: 4287520422725958100}
