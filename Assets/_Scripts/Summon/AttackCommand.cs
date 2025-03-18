@@ -13,9 +13,8 @@ namespace _Scripts.Summon
         private AttackableTarget m_attackableTarget;
         
         private float m_turnSpeed = 20.0f;
-        private float m_attackSpeed = 3.0f;
-        private int m_attackDamage = 5;
         private float m_timeCounter = 0f;
+        private SummonAI m_summonAI;
 
         public void Initialize(Transform target, NavMeshAgent agent, AIAnimationController animationController, Transform self)
         {
@@ -24,6 +23,7 @@ namespace _Scripts.Summon
             m_animationController = animationController;
             m_selfTransform = self;
             m_attackableTarget = target.GetComponent<AttackableTarget>();
+            m_summonAI = m_selfTransform.GetComponent<SummonAI>();
         }
 
         public void Execute()
@@ -47,10 +47,11 @@ namespace _Scripts.Summon
             m_selfTransform.rotation = rotation;
             
             // Attack on cooldown
-            if(m_timeCounter < m_attackSpeed) return;
+            if(m_timeCounter < m_summonAI.AttackSpeed) return;
             
-            m_animationController.AttackAnimation();
-            m_attackableTarget.Attack(m_attackDamage);
+            // Coverts to attacks per second
+            m_animationController.AttackAnimation(1/m_summonAI.AttackSpeed);
+            m_attackableTarget.Attack(m_summonAI.Damage);
             m_timeCounter = 0;
             Debug.Log($"{m_selfTransform} Attacked {m_target}");
             

@@ -1,3 +1,4 @@
+using _Scripts.Progression;
 using UnityEngine;
 
 namespace _Scripts.Player

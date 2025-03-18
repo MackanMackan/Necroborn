@@ -7,11 +7,22 @@ namespace _Scripts.Summon
 {
     public class SummonAI : MonoBehaviour
     {
+        [Header("Stats")]
+        
+        [SerializeField] private int m_health = 10;
+        [SerializeField] private int m_damage = 10;
+        [SerializeField] private float m_attackSpeed = 2;
+        
+        [Space]
         [SerializeField] private NavMeshAgent m_aiAgent;
         [SerializeField] private Transform m_target;
         [SerializeField] private AIAnimationController m_animController;
 
         private ICommand m_activeCommand;
+
+        public int Health => m_health;
+        public int Damage => m_damage;
+        public float AttackSpeed => m_attackSpeed;
 
         private void Start()
         {

@@ -856,6 +856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9885b451e902a4895f06002f52c9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_health: 10
+  m_damage: 10
+  m_attackSpeed: 1
   m_aiAgent: {fileID: 8696179798881776394}
   m_target: {fileID: 0}
   m_animController: {fileID: 4978254082424660268}
