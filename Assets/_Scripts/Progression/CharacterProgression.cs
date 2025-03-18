@@ -43,5 +43,6 @@ public class CharacterProgression : MonoBehaviour
     {
         UIManager.Instance.GetUIHealthAndManaManager().Heal(10);
         UIManager.Instance.GetUIHealthAndManaManager().GainMana(10);
+        GainExperience(100);
     }
 }
