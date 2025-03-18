@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Scripts.Enemy
 {
@@ -6,6 +7,8 @@ namespace _Scripts.Enemy
     {
         [SerializeField] private int m_health;
         [SerializeField] private ParticleSystem m_damagedParticles;
+
+        public UnityEvent OnDead;
 
         public void Attack(int damage)
         {
@@ -19,6 +22,7 @@ namespace _Scripts.Enemy
 
         private void DoDeath()
         {
+            OnDead!.Invoke();
             Debug.Log($"{gameObject.name} died.");
         }
     }

@@ -14,7 +14,7 @@ namespace _Scripts.Summon
         
         private float m_turnSpeed = 20.0f;
         private float m_attackSpeed = 3.0f;
-        private int m_attackDamage = 2;
+        private int m_attackDamage = 5;
         private float m_timeCounter = 0f;
 
         public void Initialize(Transform target, NavMeshAgent agent, AIAnimationController animationController, Transform self)

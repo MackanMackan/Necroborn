@@ -6,6 +6,7 @@ namespace _Scripts.Player
     {
         public GiveCommands GiveCommands;
         public Camera MainCamera;
+        public CharacterProgression CharacterProgression;
         
         public static PlayerAccessibles Instance => s_instance;
         private static PlayerAccessibles s_instance;
