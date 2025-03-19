@@ -21,13 +21,23 @@ namespace _Scripts.Summon
         {
             if(m_target == null) return;
 
-            m_agent.SetDestination(m_target.position);
-            m_animationController.RunAnimation(m_agent.velocity);
+           FollowTarget();
         }
 
         public void Uninitialize()
         {
 
+        }
+
+        public void FollowTarget(Transform target, NavMeshAgent agent, AIAnimationController animationController)
+        {
+            agent.SetDestination(target.position);
+            animationController.RunAnimation(agent.velocity);
+        }
+
+        private void FollowTarget()
+        {
+            FollowTarget(m_target, m_agent, m_animationController);
         }
     }
 }

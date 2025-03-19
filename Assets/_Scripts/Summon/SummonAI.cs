@@ -12,6 +12,7 @@ namespace _Scripts.Summon
         [SerializeField] private int m_health = 10;
         [SerializeField] private int m_damage = 10;
         [SerializeField] private float m_attackSpeed = 2;
+        [SerializeField] private float m_aggroRange = 5;
         
         [Space]
         [SerializeField] private NavMeshAgent m_aiAgent;
@@ -23,6 +24,7 @@ namespace _Scripts.Summon
         public int Health => m_health;
         public int Damage => m_damage;
         public float AttackSpeed => m_attackSpeed;
+        public float AggroRange => m_aggroRange;
 
         private void Start()
         {
@@ -54,5 +56,11 @@ namespace _Scripts.Summon
             ProtectAreaCommand => new ProtectAreaCommand(),
             _ => new FollowCommand()
         };
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, m_aggroRange);
+        }
     }
 }
