@@ -87,6 +87,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ProtectAreaCommand",
+                    "type": "Button",
+                    "id": "66c657ef-d00b-48da-9ab0-62d3be34671d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "be0d0c7d-497f-4fb7-93a8-69062cfde06d",
@@ -369,6 +378,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "FollowCommand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05f73128-eed3-4fb1-a3dc-9d987b3835d7",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ProtectAreaCommand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed095f00-904f-47be-a7e1-15c4f90905d8",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ProtectAreaCommand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
