@@ -5427,6 +5427,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4957605393579145646}
     m_Modifications:
+    - target: {fileID: 655334548315643104, guid: 334fe6de36cf3e443b259d997894b6f2,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 868376788755742652, guid: 334fe6de36cf3e443b259d997894b6f2,
         type: 3}
       propertyPath: m_RootOrder
@@ -5486,6 +5491,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PS_BloodSplatt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293001203418606808, guid: 334fe6de36cf3e443b259d997894b6f2,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 334fe6de36cf3e443b259d997894b6f2, type: 3}

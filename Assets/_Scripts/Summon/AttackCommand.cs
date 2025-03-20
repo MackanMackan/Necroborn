@@ -1,4 +1,5 @@
 using _Scripts.Enemy;
+using _Scripts.Player;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -46,6 +47,10 @@ namespace _Scripts.Summon
         public void AttackTarget(Transform target, AttackableTarget attackableTarget, NavMeshAgent agent, 
             Transform self, SummonAI summonAi, AIAnimationController animationController)
         {
+            // If target is dead, follow player again
+            if(attackableTarget.Health <= 0)
+                summonAi.SetNewCommand((new FollowCommand(), PlayerAccessibles.Instance.gameObject));
+            
             m_timeCounter += Time.deltaTime;
 
             // Check if agent is almost still, to indicate it is close enough to attackn change this if you have ranged units

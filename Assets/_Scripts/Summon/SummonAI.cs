@@ -41,7 +41,7 @@ namespace _Scripts.Summon
             m_activeCommand.Execute();
         }
 
-        private void SetNewCommand((ICommand,  GameObject) command)
+        public void SetNewCommand((ICommand,  GameObject) command)
         {
             Debug.Log($"{transform} got command {command}");
             m_activeCommand.Uninitialize();

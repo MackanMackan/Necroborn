@@ -30,7 +30,7 @@ namespace _Scripts.Enemy
             m_health -= damage;
             OnHit?.Invoke();
 
-            if (m_health < 0)
+            if (m_health <= 0)
             {
                 DoDeath();
                 m_isDead = true;
