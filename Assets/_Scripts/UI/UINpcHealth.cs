@@ -22,6 +22,7 @@ namespace _Scripts.UI
             m_player = PlayerAccessibles.Instance.transform;
             m_thisTransform = transform;
             m_healthBar.maxValue = m_attackableTarget.BaseHealth;
+            m_healthBar.value = m_healthBar.maxValue;
         }
 
         private void OnEnable()

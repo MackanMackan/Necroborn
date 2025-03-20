@@ -2510,7 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea9c4f40ad02594b8250fc88973f74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_baseHealth: 0
+  m_baseHealth: 100
   m_damagedParticles: {fileID: 3124310161935457720}
   OnDead:
     m_PersistentCalls:
