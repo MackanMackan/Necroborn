@@ -6,7 +6,7 @@ namespace _Scripts.Enemy
 {
     public class AttackableTarget : MonoBehaviour
     {
-        [SerializeField] private int m_baseHealth;
+        [SerializeField] private int m_baseHealth = 10;
         [SerializeField] private ParticleSystem m_damagedParticles;
 
         private bool m_isDead;
