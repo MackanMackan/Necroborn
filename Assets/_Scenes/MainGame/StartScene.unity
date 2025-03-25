@@ -1978,6 +1978,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1530200267, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: DoCommand.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530200267, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: DoCommand.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530200267, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: DoCommand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951909822}
+    - target: {fileID: 1530200267, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: DoCommand.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530200267, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: DoCommand.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GiveCommandAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530200267, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: DoCommand.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Scripts.Player.PlayerAnimationController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530200267, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
+      propertyPath: DoCommand.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1530200268, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
       propertyPath: MainCamera
       value: 
@@ -2042,6 +2070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerArmature
       objectReference: {fileID: 0}
+    - target: {fileID: 7650464473328070187, guid: 42157078d1e4fed43a26b082f9208954,
+        type: 3}
+      propertyPath: PlayerAnimaton
+      value: 
+      objectReference: {fileID: 1951909822}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42157078d1e4fed43a26b082f9208954, type: 3}
 --- !u!1001 &214906964
@@ -2925,6 +2958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonWarrior (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 326652288000562138, guid: e87a531727e56844b86c2e580930fbbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7531538372288647052, guid: e87a531727e56844b86c2e580930fbbf,
         type: 3}
@@ -7072,6 +7110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonWarrior (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 326652288000562138, guid: e87a531727e56844b86c2e580930fbbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7531538372288647052, guid: e87a531727e56844b86c2e580930fbbf,
         type: 3}
@@ -11841,6 +11884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonWarrior (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 326652288000562138, guid: e87a531727e56844b86c2e580930fbbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7531538372288647052, guid: e87a531727e56844b86c2e580930fbbf,
         type: 3}
       propertyPath: m_target
@@ -12782,6 +12830,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1951291736}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1951909822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3378465195219992945, guid: 42157078d1e4fed43a26b082f9208954,
+    type: 3}
+  m_PrefabInstance: {fileID: 209453921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5785e0fc53f5648914e7581c70bb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1964449884
 PrefabInstance:
   m_ObjectHideFlags: 0

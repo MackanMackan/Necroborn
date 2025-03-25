@@ -14,6 +14,9 @@ namespace _Scripts.Player
     public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
+        [Tooltip("Attack time between attacks")]
+        public float AttackSpeed = 2.0f;
+        
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
 
@@ -74,6 +77,8 @@ namespace _Scripts.Player
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        public PlayerAnimationController PlayerAnimaton;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -89,13 +94,7 @@ namespace _Scripts.Player
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
-
-        // animation IDs
-        private int _animIDSpeed;
-        private int _animIDGrounded;
-        private int _animIDJump;
-        private int _animIDFreeFall;
-        private int _animIDMotionSpeed;
+        private float attackTimeoutDelta;
 
         private RaycastHit[] m_rayHit = new RaycastHit[1];
         private Transform m_cameraTransform;
@@ -106,11 +105,11 @@ namespace _Scripts.Player
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
+        private PlayerAnimationController m_playerAnimationController;
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
-
-        private bool _hasAnimator;
+        
 
         private bool IsCurrentDeviceMouse
         {
@@ -138,17 +137,15 @@ namespace _Scripts.Player
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-
-            _hasAnimator = TryGetComponent(out _animator);
+            
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
+            m_playerAnimationController = GetComponent<PlayerAnimationController>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
             _playerInput = GetComponent<PlayerInput>();
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
-
-            AssignAnimationIDs();
 
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
@@ -157,26 +154,16 @@ namespace _Scripts.Player
 
         private void Update()
         {
-            _hasAnimator = TryGetComponent(out _animator);
-
             JumpAndGravity();
             GroundedCheck();
             Move();
             Aim();
+            Attack();
         }
 
         private void LateUpdate()
         {
             CameraRotation();
-        }
-
-        private void AssignAnimationIDs()
-        {
-            _animIDSpeed = Animator.StringToHash("Speed");
-            _animIDGrounded = Animator.StringToHash("Grounded");
-            _animIDJump = Animator.StringToHash("Jump");
-            _animIDFreeFall = Animator.StringToHash("FreeFall");
-            _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
         }
 
         private void GroundedCheck()
@@ -186,12 +173,6 @@ namespace _Scripts.Player
                 transform.position.z);
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
                 QueryTriggerInteraction.Ignore);
-
-            // update animator if using character
-            if (_hasAnimator)
-            {
-                _animator.SetBool(_animIDGrounded, Grounded);
-            }
         }
 
         private void CameraRotation()
@@ -276,11 +257,17 @@ namespace _Scripts.Player
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
             // update animator if using character
-            if (_hasAnimator)
-            {
-                _animator.SetFloat(_animIDSpeed, _animationBlend);
-                _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
-            }
+            PlayerAnimaton.RunAnimation(_controller.velocity.magnitude);
+        }
+
+        private void Attack()
+        {
+            attackTimeoutDelta += Time.deltaTime;
+            if(attackTimeoutDelta < AttackSpeed) return;
+            if(!_input.isFiring) return;
+
+            attackTimeoutDelta = 0;
+            m_playerAnimationController.AttackAnimation();
         }
 
         private void JumpAndGravity()
@@ -289,13 +276,6 @@ namespace _Scripts.Player
             {
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
-
-                // update animator if using character
-                if (_hasAnimator)
-                {
-                    _animator.SetBool(_animIDJump, false);
-                    _animator.SetBool(_animIDFreeFall, false);
-                }
 
                 // stop our velocity dropping infinitely when grounded
                 if (_verticalVelocity < 0.0f)
@@ -308,12 +288,7 @@ namespace _Scripts.Player
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
-                    // update animator if using character
-                    if (_hasAnimator)
-                    {
-                        _animator.SetBool(_animIDJump, true);
-                    }
+                    
                 }
 
                 // jump timeout
@@ -331,14 +306,6 @@ namespace _Scripts.Player
                 if (_fallTimeoutDelta >= 0.0f)
                 {
                     _fallTimeoutDelta -= Time.deltaTime;
-                }
-                else
-                {
-                    // update animator if using character
-                    if (_hasAnimator)
-                    {
-                        _animator.SetBool(_animIDFreeFall, true);
-                    }
                 }
 
                 // if we are not grounded, do not jump

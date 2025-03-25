@@ -6,9 +6,9 @@ namespace _Scripts.Summon
     {
         [SerializeField] private Animator animator;
 
-        private int m_animSpeed = Animator.StringToHash("Speed");
-        private int m_animAttack = Animator.StringToHash("Attack");
-        private int m_animAttackSpeed = Animator.StringToHash("AttackSpeed");
+        private readonly int m_animSpeed = Animator.StringToHash("Speed");
+        private readonly int m_animAttack = Animator.StringToHash("Attack");
+        private readonly int m_animAttackSpeed = Animator.StringToHash("AttackSpeed");
  
         public void RunAnimation(Vector3 velocity)
         {
