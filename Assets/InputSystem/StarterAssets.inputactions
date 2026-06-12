@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "StarterAssets",
     "maps": [
         {
@@ -54,7 +55,7 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "0f2ebe9a-1a39-4c4b-8f7c-b10ce0264548",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
@@ -90,7 +91,7 @@
                     "name": "ProtectAreaCommand",
                     "type": "Button",
                     "id": "66c657ef-d00b-48da-9ab0-62d3be34671d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -99,7 +100,16 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "be0d0c7d-497f-4fb7-93a8-69062cfde06d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleInventory",
+                    "type": "Button",
+                    "id": "7f27213d-d1a9-47a9-8bdb-0393c6c795bb",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -306,6 +316,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c97d614e-9c51-4efc-8d86-9ba129b82884",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "36578fdc-bf10-4fd5-be8a-019d86b30073",
                     "path": "<Keyboard>/p",
                     "interactions": "",
@@ -400,6 +421,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ProtectAreaCommand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1afde623-a660-4526-80d2-4aae48bb4f20",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21dfc2d6-ee4c-47da-b67c-4de37ca76970",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
