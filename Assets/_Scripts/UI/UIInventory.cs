@@ -4,9 +4,17 @@ using UnityEngine.UI;
 
 public class UIInventory : MonoBehaviour
 {
+    [Header("Bag Icon")]
     [SerializeField] private Image m_bagIcon;
     [SerializeField] private Sprite m_bagClosedIcon;
     [SerializeField] private Sprite m_bagOpenIcon;
+
+    [Space]
+
+    [Header("Inveontory")]
+    [SerializeField] private GameObject m_inventoryImage;
+
+
 
     bool m_isOpen = false;
 
@@ -22,10 +30,12 @@ public class UIInventory : MonoBehaviour
         if (m_isOpen)
         {
             m_bagIcon.sprite = m_bagOpenIcon;
+            m_inventoryImage.SetActive(m_isOpen);
         }
         else
         {
             m_bagIcon.sprite = m_bagClosedIcon;
+            m_inventoryImage.SetActive(m_isOpen);
         }
     }
 }
