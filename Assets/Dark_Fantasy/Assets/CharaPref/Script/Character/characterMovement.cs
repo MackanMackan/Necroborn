@@ -138,9 +138,9 @@ public class characterMovement : MonoBehaviour {
     public LayerMask            myLayer;
     public Vector3              rayPosition = Vector3.zero;
 
-    public PhysicMaterial       pMove;
-    public PhysicMaterial       pStop;
-    public PhysicMaterial       pIce;
+    public PhysicsMaterial       pMove;
+    public PhysicsMaterial       pStop;
+    public PhysicsMaterial       pIce;
     private CapsuleCollider     charCol;
 
     // Use to know if the player touching something. Use to if the character is grounded
@@ -389,7 +389,7 @@ public class characterMovement : MonoBehaviour {
             if(currentAngle >= 180 - MaxAngle )
                 rbBodyCharacter.AddForceAtPosition(Direction * characterSpeed * currentSpeedMultiplier, addForceObj.transform.position, ForceMode.Force);            // move the character
 
-            Vector3 opposite = rbBodyCharacter.transform.InverseTransformDirection(-rbBodyCharacter.velocity);                          // Opposite force to stop the character
+            Vector3 opposite = rbBodyCharacter.transform.InverseTransformDirection(-rbBodyCharacter.linearVelocity);                          // Opposite force to stop the character
            
             rbBodyCharacter.AddRelativeForce(opposite * BrakeForce * Coeff, ForceMode.Force);  
         }
@@ -399,8 +399,8 @@ public class characterMovement : MonoBehaviour {
 
 
             
-        if (rbBodyCharacter.velocity.magnitude > MaxSpeed)
-            rbBodyCharacter.velocity = rbBodyCharacter.velocity.normalized * MaxSpeed;
+        if (rbBodyCharacter.linearVelocity.magnitude > MaxSpeed)
+            rbBodyCharacter.linearVelocity = rbBodyCharacter.linearVelocity.normalized * MaxSpeed;
         
 	}
 	 
@@ -745,8 +745,8 @@ public class characterMovement : MonoBehaviour {
 
     // Stop moving the character is pause is activated
     public void charaStopMoving(){
-        if(rbBodyCharacter.velocity != Vector3.zero){
-            rbBodyCharacter.velocity = Vector3.zero;
+        if(rbBodyCharacter.linearVelocity != Vector3.zero){
+            rbBodyCharacter.linearVelocity = Vector3.zero;
         }
     }
 
@@ -830,7 +830,7 @@ public class characterMovement : MonoBehaviour {
             rbBodyCharacter.constraints = RigidbodyConstraints.FreezeRotation;
         }
 
-        if (rbBodyCharacter.velocity.sqrMagnitude * 10000 < 2 && YAxis == 0 && XAxis == 0     // Keyboard 
+        if (rbBodyCharacter.linearVelocity.sqrMagnitude * 10000 < 2 && YAxis == 0 && XAxis == 0     // Keyboard 
 
             )
         {
